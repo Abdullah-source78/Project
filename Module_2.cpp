@@ -6,54 +6,49 @@ using namespace std;
 
 int main() {
     const int maxRows = 60;  
-    const int maxColumns = 7;  
-    string data[maxRows][maxColumns]; 
-    int row = 0;
+    const int maxCols = 7;  
+    string data[maxRows][maxCols]; 
+    int rows = 0;
 
-    ifstream file("Friends Dataset.csv");
+    ifstream in("Friends Dataset.csv");
 
-    if (file.is_open()) {
+    if (in.is_open()) {
         string line;
-        while (getline(file, line) && row < maxRows) {
-            stringstream ss(line);
-            string value;
-            int col = 0;
 
-            while (getline(ss, value, ',') && col < maxColumns) {
-                data[row][col] = value;
-                col++;
-            }
-            row++;
-        }
-        file.close();
-    } else {
-        cout << "Unable to open file!" << endl;
+    const int maxRows = 190;  
+    const int maxCol = 6;
+    string arr[maxRows][maxCol];
+    int rows = 0;
+    string line;
+    ifstream in("Friends Dataset.csv");
+    
+    while (getline(in,line) && rows < maxRows){
+    stringstream stm(line);
+    string name ;
+    int cols = 0;
+
+    while(getline(stm,name,',') && cols < maxCol){
+        arr[rows][cols] = name;
+        cols++;
     }
-
-   for (int i = 0; i < maxRows; i++) {
-        for (int j = 0; j < maxColumns; j++) {
-            cout << data[i][j] << " ";
+    rows++;
+    }
+    in.close();
+    for (int i =0;i<rows;i++){
+        bool symetric = false;
+        for(int k =0;k<rows;k++){
+            if(arr[i][0]==arr[k][1] && arr[i][1] == arr[k][0]){
+                symetric = true;
+                break;
+            }
+            
         }
-        cout << endl;
+        if(!symetric){
+                cout << arr[i][0] << ", " << arr[i][1] <<endl;
+            }
     }
 
     
-    cout << "Asymmetric friendship pairs:" << endl;
-    for (int i = 0; i < row; i++) {
-        bool symmetric = false;
-        for (int j = 0; j < row; j++) {
-            if (data[i][0] == data[j][1] && data[i][1] == data[j][0]) {
-                symmetric = true; 
-                break;
-            }
-        }
-        if (!symmetric) {
-            cout << "(" << data[i][0] << ", " << data[i][1] << ")" << endl;
-        }
-    }
-
-   
-
     return 0;
 }
 

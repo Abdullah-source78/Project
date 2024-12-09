@@ -8,25 +8,24 @@ int main() {
     const int SIZE = 190; 
     string arr[SIZE]; 
     int studentCount = 0; 
-    ifstream file("Friends Dataset.csv");
-    if(file.is_open()){
+    ifstream in("Friends Dataset.csv");
+    if(in.is_open()){
 
         string line;
-        while (getline(file, line)) {
-            stringstream ss(line);
-            string name;
-
-
-            while (getline(ss, name, ',')) {
-                if (!name.empty() && studentCount < SIZE) {
+         while (getline(in,line)){
+            stringstream stm(line);
+            string name ;
+            while(getline(stm,name,',')){
+                if(!name.empty() && studentCount < SIZE){
                     arr[studentCount++] = name;
                 }
             }
         }
+        
     } else {
-        cout << "Unable to open file!" << endl;
+        cout << "Unable to open File!" << endl;
     }
-    file.close();
+    in.close();
     int maxDup = 0;
     string popularStd;
 
