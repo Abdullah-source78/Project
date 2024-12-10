@@ -16,7 +16,8 @@ int main() {
         string line;
 
    
-        getline(in, line);  
+        getline(in, line);  //ye line add ki take wo pele lline ya row ko 
+        // read kar le aur next step mai skip ho jae
 
         while (getline(in,line) && rows < maxRows){
             stringstream stm(line);
@@ -35,7 +36,7 @@ int main() {
         for(int k =0;k<rows;k++){
             if(arr[i][0]==arr[k][1] && arr[i][1] == arr[k][0]){
                 symetric = true;
-                break;
+                break;  /// agar dono aps mai dost ho toh loop statement se bhr aa aje
             }
             
         }
