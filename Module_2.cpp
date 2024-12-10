@@ -5,34 +5,30 @@
 using namespace std;
 
 int main() {
-    const int maxRows = 60;  
-    const int maxCols = 7;  
-    string data[maxRows][maxCols]; 
+    const int maxRows = 190;  
+    const int maxCol = 6;
+    string arr[maxRows][maxCol];
     int rows = 0;
-
+    
     ifstream in("Friends Dataset.csv");
 
     if (in.is_open()) {
         string line;
 
-    const int maxRows = 190;  
-    const int maxCol = 6;
-    string arr[maxRows][maxCol];
-    int rows = 0;
-    string line;
-    ifstream in("Friends Dataset.csv");
-    
-    while (getline(in,line) && rows < maxRows){
-    stringstream stm(line);
-    string name ;
-    int cols = 0;
+   
+        getline(in, line);  
 
-    while(getline(stm,name,',') && cols < maxCol){
-        arr[rows][cols] = name;
-        cols++;
-    }
-    rows++;
-    }
+        while (getline(in,line) && rows < maxRows){
+            stringstream stm(line);
+            string name ;
+            int cols = 0;
+
+            while(getline(stm,name,',') && cols < maxCol){
+                arr[rows][cols] = name;
+                cols++;
+            }
+            rows++;
+        }
     in.close();
     for (int i =0;i<rows;i++){
         bool symetric = false;
@@ -50,6 +46,6 @@ int main() {
 
     
     return 0;
-}
+}}
 
 

@@ -5,7 +5,7 @@
 using namespace std;
 int main() {
 
-    const int SIZE = 190; 
+    const int SIZE = 200; 
     string arr[SIZE]; 
     int studentCount = 0; 
     ifstream in("Friends Dataset.csv");
@@ -21,6 +21,14 @@ int main() {
                 }
             }
         }
+
+    //     string line;
+    //     while (getline(in, line, ',')) {
+    //         if (!line.empty() && studentCount < SIZE) {
+    //             arr[studentCount++] = line;
+    //             cout<<studentCount<<endl;
+    // }
+// }
         
     } else {
         cout << "Unable to open File!" << endl;
@@ -32,19 +40,17 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int duplicate = 0;
         for (int k = 0; k < SIZE; k++) {
-            if (arr[i] == arr[k]) {
+            if (arr[i] == arr[k] && i != k) {
                 duplicate++;
             }
         }
 
         if(maxDup < duplicate){
-
-            maxDup = duplicate -1;
+            maxDup = duplicate ;
             popularStd = arr[i];
         }
-
     }
-    
+
     cout <<"Popular student "<<popularStd<< " appears " << maxDup << " times!!" << endl;
 
     return 0;
