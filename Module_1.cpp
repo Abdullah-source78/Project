@@ -40,7 +40,7 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int duplicate = 0;
         for (int k = 0; k < SIZE; k++) {
-            if (arr[i] == arr[k] && i != k) {
+            if (arr[i] == arr[k] && i != k) {   //ye line main condition add ki jo popular person itself ko ni pick kare ga
                 duplicate++;
             }
         }
