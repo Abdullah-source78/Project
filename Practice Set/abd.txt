@@ -1,0 +1,4 @@
+Enter the data of 1 Student :
+Enter the name of Student :Muhammad Abdullah
+Enter the age of Student :19
+Enter the address of Student :Abduapslpolxslqwop[]

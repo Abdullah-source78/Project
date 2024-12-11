@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    const int maxRows = 190;  
+    const int maxRows = 52;  
     const int maxCol = 6;
     string arr[maxRows][maxCol];
     int rows = 0;

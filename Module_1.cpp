@@ -5,7 +5,7 @@
 using namespace std;
 int main() {
 
-    const int SIZE = 200; 
+    const int SIZE = 52; 
     string arr[SIZE]; 
     int studentCount = 0; 
     ifstream in("Friends Dataset.csv");
