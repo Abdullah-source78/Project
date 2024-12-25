@@ -7,6 +7,7 @@ using namespace std;
 const int MAX_STUDENTS = 190;
 const int MAX_FRIENDS = 6;
 
+// HAFSA ASLAM 
 // ye data ko array mai load karne ke liye
 void loadData(string students[MAX_STUDENTS][MAX_FRIENDS], int& numStudents, const string& filename) {
     ifstream file("Friends Dataset.csv");
@@ -33,6 +34,7 @@ void loadData(string students[MAX_STUDENTS][MAX_FRIENDS], int& numStudents, cons
     file.close();
 }
 
+// MUHAMMAD ABDULLAH 
 // ye check karne ke liye keh if two students are direct friends
 bool areDirectFriends(string students[MAX_STUDENTS][MAX_FRIENDS], int numStudents, const string& studentA, const string& studentB) {
     for (int i = 0; i < numStudents; i++) 
@@ -51,6 +53,7 @@ bool areDirectFriends(string students[MAX_STUDENTS][MAX_FRIENDS], int numStudent
     return false;
 }
 
+// MUHAMMAD DANIYAL IDREES 
 // ye potential dhondne ke liye friendships
 void findPotentialFriendships(string students[MAX_STUDENTS][MAX_FRIENDS], int numStudents, int alpha) 
 {

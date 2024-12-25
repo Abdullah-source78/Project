@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -7,6 +8,7 @@ using namespace std;
 const int MAX_STUDENTS = 190;
 const int MAX_FRIENDS = 6;
 
+// MUHAMMAD DANIYAL IDREES & HAFSA ASLAM
 // data ko array mai load krwane kie liye
 void loadData(string students[MAX_STUDENTS][MAX_FRIENDS],int& numStudents,const string& filename)
 {
@@ -31,8 +33,10 @@ void loadData(string students[MAX_STUDENTS][MAX_FRIENDS],int& numStudents,const 
     }
     file.close();
 }
+// MUHAMMAD DANIYAL IDREES & HAFSA ASLAM
 
 // ye multiplicity graph baanne ke liye function hi
+// BY MUHAMMAD ABDULLAH (S101)
 void createMultiplicityGraph(string students[MAX_STUDENTS][MAX_FRIENDS], int numStudents) 
 {
     cout << "Multiplicity Graph (Weighted Graph):"<<endl;
