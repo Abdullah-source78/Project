@@ -21,7 +21,7 @@ int main()
     {
         bool duplicates = false;
         for (int h = 0; h < row && !duplicates; ++h)
-             for (int k = 1; k < maxcol ; ++k)
+            
             if (p != h && data[p][0] == data[h][k] && data[p][k] == data[h][0]) 
                 duplicates = true;
         if (!duplicates) 
