@@ -21,10 +21,11 @@ int main()
     {
         bool duplicates = false;
         for (int h = 0; h < row && !duplicates; ++h)
-            if (p != h && data[p][0] == data[h][1] && data[p][1] == data[h][0]) 
+             for (int k = 1; k < maxcol ; ++k)
+            if (p != h && data[p][0] == data[h][k] && data[p][k] == data[h][0]) 
                 duplicates = true;
         if (!duplicates) 
-            cout << data[p][0] << ", " << data[p][1] << endl;
+            cout << data[p][0] << ", " << data[p][k] << endl;
     }
     return 0;
  }    //Muhammad Daniyal Idrees
